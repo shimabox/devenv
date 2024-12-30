@@ -1,0 +1,18 @@
+{# templates/task/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}タスク一覧{% endblock %}
+
+{% block body %}
+    <h1>タスク一覧</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }}
+            </li>
+        {% else %}
+            <li>タスクがありません。</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
