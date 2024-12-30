@@ -13,6 +13,11 @@
         {% for task in tasks %}
             <li>
                 <a href="{{ path('task_edit', {'id': task.id}) }}">{{ task.title }}</a>
+                <form action="{{ path('task_delete', {'id': task.id}) }}" method="post" style="display:inline">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ task.id) }}">
+                    <button type="submit">削除</button>
+                </form>
             </li>
         {% else %}
             <li>タスクがありません。</li>
