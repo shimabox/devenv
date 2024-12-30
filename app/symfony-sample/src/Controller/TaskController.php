@@ -35,4 +35,24 @@ class TaskController extends AbstractController
 
         return $this->render('task/new.html.twig', ['form' => $form->createView()]);
     }
+
+    #[Route('/task/{id}/edit', name: 'task_edit', methods: ['GET', 'PUT'])]
+    public function edit(Task $task, Request $request, EntityManagerInterface $em): Response
+    {
+        $form = $this->createForm(TaskType::class, $task, [
+            'method' => 'PUT',
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->flush();
+
+            return $this->redirectToRoute('task_index');
+        }
+
+        return $this->render('task/edit.html.twig', [
+            'form' => $form->createView(),
+            'task' => $task,
+        ]);
+    }
 }

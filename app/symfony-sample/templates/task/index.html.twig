@@ -12,7 +12,7 @@
     <ul>
         {% for task in tasks %}
             <li>
-                {{ task.title }}
+                <a href="{{ path('task_edit', {'id': task.id}) }}">{{ task.title }}</a>
             </li>
         {% else %}
             <li>タスクがありません。</li>

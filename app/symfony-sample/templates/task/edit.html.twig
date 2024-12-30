@@ -1,0 +1,19 @@
+{# templates/task/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}タスクを編集{% endblock %}
+
+{% block body %}
+    <h1>タスクを編集</h1>
+
+    {{ form_start(form, {
+        'method': 'PUT',
+        'action': path('task_edit', {'id': task.id})
+    }) }}
+    {{ form_widget(form) }}
+    <button type="submit">更新</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('task_index') }}">戻る</a>
+{% endblock %}
