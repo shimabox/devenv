@@ -1,0 +1,16 @@
+{# templates/task/new.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}新しいタスクを作成{% endblock %}
+
+{% block body %}
+    <h1>新しいタスクを作成</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">作成</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('task_index') }}">戻る</a>
+{% endblock %}
