@@ -1,3 +1,6 @@
+> [!TIP]
+> このリポジトリは、[Symfonyで簡単なCRUDを作る #PHP - Qiita](https://qiita.com/shimabox/items/0197645f35fa0c64d929 "Symfonyで簡単なCRUDを作る #PHP - Qiita") の作業ログです。
+
 # 『はじめてのPHP エンジニア入門編』
 
 2024年12月3日発売の書籍 『TECHNICAL MASTER はじめてのPHP エンジニア入門編』に記載したサンプルコードを試すための開発環境構築をおこなうリポジトリです。
